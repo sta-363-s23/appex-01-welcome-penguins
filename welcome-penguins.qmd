@@ -1,12 +1,15 @@
 ---
 title: "Penguins!"
 author: "Lucy D'Agostino McGowan"
-output: html_document
+format: 
+  html:
+    self-contained: true
+editor: visual
 ---
 
 ## Introduction
 
-We are interested in the relationship between flipper length and bill length for different penguin species. 
+We are interested in the relationship between flipper length and bill length for different penguin species.
 
 ### Packages
 
@@ -21,7 +24,6 @@ library(tidyverse)
 library(palmerpenguins)
 library(DT)
 ```
-
 
 ### Data
 
@@ -46,11 +48,9 @@ ggplot(penguins,
 
 ## References
 
-1. Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer
-Archipelago (Antarctica) penguin data. R package version 0.1.0.
-https://allisonhorst.github.io/palmerpenguins/
+1.  Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/
 
-## Appendix 
+## Appendix
 
 Below is the full dataset:
 
