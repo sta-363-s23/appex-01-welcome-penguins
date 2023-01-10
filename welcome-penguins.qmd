@@ -1,0 +1,62 @@
+---
+title: "Penguins!"
+author: "Lucy D'Agostino McGowan"
+output: html_document
+---
+
+## Introduction
+
+We are interested in the relationship between flipper length and bill length for different penguin species. 
+
+### Packages
+
+We will use the **tidyverse** package for data wrangling, the **palmerpenguins** package to obtain the data, and the **DT** package for interactive display of tabular output.
+
+```{r}
+#| label: load-packages
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(palmerpenguins)
+library(DT)
+```
+
+
+### Data
+
+These data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. The dataset can be accessed after loading the **palmerpenguins** package.
+
+## Palmer Penguins
+
+```{r}
+#| label: plot
+
+ggplot(penguins, 
+       mapping = aes(x = flipper_length_mm, y = bill_length_mm, color = species)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Flipper and bill length",
+    subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins at Palmer Station LTER",
+    x = "Flipper length (mm)",
+    y = "Bill length (mm)"
+  )
+```
+
+## References
+
+1. Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer
+Archipelago (Antarctica) penguin data. R package version 0.1.0.
+https://allisonhorst.github.io/palmerpenguins/
+
+## Appendix 
+
+Below is the full dataset:
+
+```{r}
+#| label: data
+#| echo: false
+penguins %>% 
+  datatable()
+```
